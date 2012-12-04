@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>3DLondon</title>
-	<meta name="description" content="3D visualisations of buildings in London using UKMap data with leaflet and OSM 		Buildings.">
+	<meta name="description" content="3D visualisations of buildings in London 
+                        using UKMap data with leaflet and OSM Buildings.">
 	<meta name="author" content="Tom Holderness">
 	<meta name="version" content="0.1">
 	
@@ -50,17 +51,22 @@
 	//Get current map view bounding box coords as WKT
 	function getBBoxWKT(){
 		var mbounds = map.getBounds().toBBoxString().split(',');
-		var bounds_wkt = 'POLYGON(('+mbounds[2]+' '+mbounds[1]+','+mbounds[0]+' '+mbounds[1]+','+mbounds[0]+' '+mbounds[3]+','+mbounds[2]+' '+mbounds[3]+','+mbounds[2]+' '+mbounds[1]+'))';
+		var bounds_wkt = 'POLYGON(('+mbounds[2]+' '+mbounds[1]+','+mbounds[0]+' '
+                                 +mbounds[1]+','+mbounds[0]+' '+mbounds[3]+','
+                                 +mbounds[2]+' '+mbounds[3]+','+mbounds[2]+' '
+                                 +mbounds[1]+'))';
 		return bounds_wkt;
 	}
 
 
 	//Request data from GeoJson server and add to map
 	function getBuildings(bounds_wkt){
-		jQuery.postJSON('/3DLondon/getdata.py?bbox_wkt='+bounds_wkt, function(data){
+		jQuery.postJSON('/3DLondon/get_geojson.py?bbox_wkt='+bounds_wkt, 
+      function(data){
 			build
         		.addTo(map)
-		        .setStyle({ wallColor: 'rgb(200,190,180)', roofColor: 'null', strokeRoofs: true })
+		        .setStyle({ wallColor: 'rgb(200,190,180)', roofColor: 'null', 
+                           strokeRoofs: true })
         		.geoJSON(data)
 			;	
 			});
@@ -93,6 +99,7 @@
 	
 	//Call get bounds and get buildings on page load
 	getBuildings(getBBoxWKT());
+   alert(getBBoxWKT());
 
 	//Listen for map pan events and get new buildings data 
 	map.on('moveend', function(e) {
