@@ -73,11 +73,11 @@
 	};
 
 	//Create map, with center coordinates for St Paul's Cathedral-->
-	var latlon = new L.LatLng(51.513611, -0.098056);	
+   var latlon = new L.LatLng(51.513611, -0.098056);
 	var map = L.map('map').setView(latlon, 18);
 
 	//Canada Square (Canary Wharf)
-	//var latlon = new L.LatLng(51.505, -0.018589); 
+	//51.505, -0.018589
 
 	//Render London (may crash!)
 	//var latlon = new L.LatLng(51.505, -0.118589); 
@@ -87,7 +87,7 @@
 	map.attributionControl.setPrefix('<a href="http://tomholderness.wordpress.com" target="_blank">3DLondon Map</a> | 3D Building data &copy the <a href="http://www.geoinformationgroup.co.uk/products/ukmap" target=_blank">GeoInformation Group</a> provided by <a href="http://www.landmap.ac.uk/" target="_blank">Landmap</a> | Basemap &copy <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>  <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a> & <a href="http://cloudmade.com/" target="_blank">Cloudmade</a>');
 
 	//Add a basemap using OSM data with Cloudmade styling
-	var basemap = new L.tileLayer('http://{s}.tile.cloudmade.com/deedc5cf90ae407885ec4a8678c85e0a/78326/256/{z}/{x}/{y}.png');
+	var basemap = new L.tileLayer('http://{s}.tile.cloudmade.com/96d0118ec12346d288a16fb9b24687e4/78744/256/{z}/{x}/{y}.png');
 	map.addLayer(basemap);
 
 	//Add scale bar to map

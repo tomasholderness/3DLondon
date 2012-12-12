@@ -7,7 +7,7 @@
 
 # Copyright Tom Holderness 2012.
 # Released under BSD license (see LICENSE.txt) 
-# https://github.com/talltom/
+# https://github.com/talltom/3DLondon
 
 __author__='Tom Holderness'
 __year__='2012'
