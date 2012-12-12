@@ -22,11 +22,11 @@
 	<!--Leaflet map library (hosted version)-->
 	<script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
 
-	<!--OSM Buildings library for buildings (forked version to remove OSM attribution for buildings)-->
-	<script src="https://raw.github.com/talltom/osmbuildings/v0.1.7a/dist/L.BuildingsLayer-debug.js"></script>
+	<!--OSM Buildings library development-->
+	<script src="http://osmbuildings.org/js/L.BuildingsLayer.js"></script>
 
 	<!--Styles and CSS-->
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css"/>
 	<!--[if lte IE 8]>
     	<	link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
 	<![endif]-->
@@ -65,7 +65,7 @@
       function(data){
 			build
         		.addTo(map)
-		        .setStyle({ wallColor: 'rgb(200,190,180)', roofColor: 'null', 
+		        .setStyle({ wallColor: 'rgb(200,190,180)', roofColor: 'rgb(255, 255, 255)', 
                            strokeRoofs: true })
         		.geoJSON(data)
 			;	
